@@ -41,6 +41,10 @@ const cosineSimilarity = (a:any, b:any) => {
     return dotProduct / (normA * normB);
 };
 
+app.get('/',function(req,res){
+    res.send("hello");
+}
+
 // @ts-ignore
 app.post('/api/v1/embed', async (req:Request, res:Response) => {
     try {
