@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Figtree:ital,wght@0,300..900;1,300..900&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+    input[type="password"]::-ms-reveal {
+        @apply invert; /* Inverts the color */
+    }
+}
