@@ -113,6 +113,11 @@ app.post('/api/v1/embed', (req, res) => __awaiter(void 0, void 0, void 0, functi
         }
     }
 }));
+
+app.get('/', function(req,res){
+    res.send("hello")
+})
+
 app.post('/api/v1/signup', function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
