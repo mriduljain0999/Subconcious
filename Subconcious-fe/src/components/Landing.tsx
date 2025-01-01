@@ -17,7 +17,7 @@ export function Landing(){
     return (
         <div className='w-screen bg-black text-[#EEEEEE] flex flex-col items-center justify-between h-screen'>
              <video src={landing_video} className='fixed top-0 left-0 overflow-hidden md:translate-y-64 translate-y-80' muted autoPlay loop>Your browser does not support video.</video>
-            <header className='cursor-pointer flex gap-2 items-center'>
+            <header className='absolute top-[0%] md:left-[45%] left-[35%] cursor-pointer flex gap-2 items-center'>
                 <img src={logo} alt="" />
                 <p className='font-["Domine"]'>Subconcious.io</p>
             </header>
@@ -27,7 +27,7 @@ export function Landing(){
                     <p>It’s now your official</p>
                     <p className='text-[#6B72FF]'>Second Brain</p>
                 </div>
-                <div className='flex justify-between items-center w-[90%] sm:w-[70%] md:w-[43%] rounded-2xl bg-[#131313] border-[1px] border-[#242424] mt-10' style={{ fontFamily: '"Figtree", serif' }}>
+                <div className='absolute bottom-[0%] p-2 md:left-[27%] left-[5%] flex justify-between items-center w-[90%] sm:w-[70%] md:w-[43%] rounded-2xl bg-[#131313] border-[1px] border-[#242424] mt-10' style={{ fontFamily: '"Figtree", serif' }}>
                     <img className='cursor-pointer' src={logo} alt="" />
                     <div className='flex items-center gap-3'>
                         <Button onClick={signup} text='Register' />
