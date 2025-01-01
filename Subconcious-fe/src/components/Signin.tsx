@@ -22,7 +22,7 @@ export function Signin(){
 
      useEffect(() => {
         navigate('/signin')
-    },[])
+    },[navigate])
 
 
     function incorrectCreds(){
