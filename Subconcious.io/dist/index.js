@@ -58,12 +58,16 @@ const authMiddleware_1 = require("./authMiddleware");
 const axios_1 = __importDefault(require("axios"));
 const tfjs_1 = __importDefault(require("@tensorflow/tfjs"));
 dotenv.config();
-const secret = "halleluiyauser";
-const port = 3000;
-const database_url = "mongodb+srv://mriduljain012:ahnw9kt8H5@cluster0.th8on.mongodb.net/100xSubconcious";
+const secret = process.env.JWT_SECRET;
+const port = process.env.PORT;
+const database_url = process.env.MONGODB_URL;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: 'https://subconcious.vercel.app', // Allow only your frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // Include cookies if required
+}));
 var ResponseStatus;
 (function (ResponseStatus) {
     ResponseStatus[ResponseStatus["Success"] = 200] = "Success";
@@ -113,11 +117,6 @@ app.post('/api/v1/embed', (req, res) => __awaiter(void 0, void 0, void 0, functi
         }
     }
 }));
-
-app.get('/', function(req,res){
-    res.send("hello")
-})
-
 app.post('/api/v1/signup', function (req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -337,7 +336,6 @@ app.get('/api/v1/brain/:shareLink', function (req, res) {
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoose_1.default.connect(database_url);
-        alert("database connected")
         app.listen(port);
         console.log("Running on port 3000");
     });
