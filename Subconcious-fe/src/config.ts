@@ -1,1 +1,1 @@
-export const backend_url = "https://subconcious-be.vercel.app";
+export const backend_url = "http://localhost:3000";
