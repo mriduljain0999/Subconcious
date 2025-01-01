@@ -88,6 +88,10 @@ app.post('/api/v1/embed', async (req:Request, res:Response) => {
     }
 });
 
+app.get('/',function(req,res){
+    res.send("hello")
+})
+
 app.post('/api/v1/signup', async function(req, res) {
     try {
         const userData = await UserModel.find({ username: req.body.username });
