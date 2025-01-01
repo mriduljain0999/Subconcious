@@ -14,14 +14,18 @@ import tf from '@tensorflow/tfjs'
 
 dotenv.config();
 
-const secret = "halleluiyauser";
-const port = 3000;
-const database_url = "mongodb+srv://mriduljain012:ahnw9kt8H5@cluster0.th8on.mongodb.net/100xSubconcious";
+const secret = process.env.JWT_SECRET;
+const port  = process.env.PORT;
+const database_url = process.env.MONGODB_URL;
 
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: 'https://subconcious.vercel.app', // Allow only your frontend
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // Include cookies if required
+  }));
 
 enum ResponseStatus {
     Success = 200,
@@ -40,10 +44,6 @@ const cosineSimilarity = (a:any, b:any) => {
     const normB = tf.norm(b).dataSync()[0];
     return dotProduct / (normA * normB);
 };
-
-app.get('/',function(req,res){
-    res.send("hello");
-}
 
 // @ts-ignore
 app.post('/api/v1/embed', async (req:Request, res:Response) => {
