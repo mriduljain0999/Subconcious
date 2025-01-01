@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+limport { useNavigate } from 'react-router-dom'
 import logo from '../assets/logo.svg'
 import { backend_url } from '../config';
 import { useRef, useState } from 'react';
@@ -19,6 +19,10 @@ export function Signin(){
 
     const [correct, setCorrect] = useRecoilState(CorrectAtom);
     const [incorrect, setIncorrect] = useRecoilState(IncorrectAtom);
+
+     useEffect(() => {
+        navigate('/signin')
+    },[])
 
 
     function incorrectCreds(){
