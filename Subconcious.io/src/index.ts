@@ -14,9 +14,9 @@ import tf from '@tensorflow/tfjs'
 
 dotenv.config();
 
-const secret = halleluiyaUser;
-const port  = 3000;
-const database_url = mongodb+srv://mriduljain012:ahnw9kt8H5@cluster0.th8on.mongodb.net/100xSubconcious;
+const secret = "halleluiyauser";
+const port = 3000;
+const database_url = "mongodb+srv://mriduljain012:ahnw9kt8H5@cluster0.th8on.mongodb.net/100xSubconcious";
 
 
 const app = express();
