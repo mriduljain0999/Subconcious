@@ -4,28 +4,20 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import { z } from 'zod';
 import cors from 'cors';
-import * as dotenv from 'dotenv'
 import { UserModel, ContentModel, TagModel, LinkModel } from './db';
 import { random } from './randonStringGen';
 import { authMiddleware } from './authMiddleware';
 import axios from 'axios'
 import tf from '@tensorflow/tfjs'
 
-
-dotenv.config();
-
-const secret = process.env.JWT_SECRET;
-const port  = process.env.PORT;
-const database_url = process.env.MONGODB_URL;
+const secret = "halleluiyaUser";
+const port  = 3000;
+const database_url = "mongodb+srv://mriduljain012:ahnw9kt8H5@cluster0.th8on.mongodb.net/100xSubconcious";
 
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-    origin: 'https://subconcious.vercel.app', // Allow only your frontend
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
-    credentials: true // Include cookies if required
-  }));
+app.use(cors());
 
 enum ResponseStatus {
     Success = 200,
