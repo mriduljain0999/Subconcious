@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import { ContentAtom } from "../atoms/ContentAtom";
 import axios from "axios";
 import { backend_url } from "../config";
 
 export function ToggleTabs() {
   const [activeTab, setActiveTab] = useState("All");
-  let [contents, setContents] = useRecoilState(ContentAtom);
+  let setContents = useSetRecoilState(ContentAtom);
   let ogContents: any = useRef([]);
 
   const tabs = ["All", "Youtube", "Twitter", "Notion"];
