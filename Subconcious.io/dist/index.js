@@ -337,6 +337,7 @@ app.get('/api/v1/brain/:shareLink', function (req, res) {
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         yield mongoose_1.default.connect(database_url);
+        alert("database connected")
         app.listen(port);
         console.log("Running on port 3000");
     });
