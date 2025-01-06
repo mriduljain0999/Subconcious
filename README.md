@@ -9,6 +9,10 @@ Subconscious.io is a second-brain application that allows users to organize and 
 - **Intuitive Interface:** Minimalist design for a seamless user experience.
 - **Cross-Platform Accessibility:** Access your second brain from any device.
 
+## Live Demo
+
+Check out the live application: [Subconscious.io](https://subconcious.vercel.app/)
+
 ## Technologies Used
 
 ### Backend
