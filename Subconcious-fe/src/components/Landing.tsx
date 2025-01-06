@@ -17,13 +17,13 @@ export function Landing(){
     return (
         <div className='w-screen bg-black text-[#EEEEEE] flex flex-col items-center justify-between h-screen'>
              <video src={landing_video} className='fixed top-0 left-0 overflow-hidden md:translate-y-64 translate-y-80' muted autoPlay loop>Your browser does not support video.</video>
-            <header className='absolute top-[0%] md:left-[45%] left-[35%] cursor-pointer flex gap-2 items-center'>
+            <header className='absolute top-[0%] md:left-[43%] left-[32%] cursor-pointer flex gap-2 items-center'>
                 <img src={logo} alt="" />
                 <p className='font-["Domine"]'>Subconcious.io</p>
             </header>
     
             <main className='flex flex-col items-center z-10'>
-                <div className='absolute top-[40%] md:left-[17%] left-[10%] md:leading-[6rem] tracking-[-0.07em] text-center lg:text-[7rem] md:text-[5rem] text-[4rem] leading-[4rem]' style={{ fontFamily: '"Old Standard TT", serif' }}>
+                <div className='absolute top-[40%] md:left-[17%] left-[8%] md:leading-[6rem] tracking-[-0.07em] text-center lg:text-[7rem] md:text-[5rem] text-[4rem] leading-[4rem]' style={{ fontFamily: '"Old Standard TT", serif' }}>
                     <p>It’s now your official</p>
                     <p className='text-[#6B72FF]'>Second Brain</p>
                 </div>
